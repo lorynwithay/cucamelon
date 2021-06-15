@@ -17,11 +17,11 @@
   <img src="https://raw.githubusercontent.com/lorynwithay/cucamelon/main/cucamelon.jpeg">
 <p>I am building a directory people who have tried cucamelons and what they think.</p> 
 
-<form name="travel" onsubmit="identify(event)"> Have you ever tried a cucamelon? <input name="destination" required="" size="81" type="text"/> 
+<form name="cucamelon" onsubmit="identify(event)"> Have you ever tried a cucamelon? <input name="tried" required size="81" type="text"/> 
 <br><br><br> 
 What did you think of it? 
 <br><br> 
-<textarea cols="81" name="details" required="" rows="10"> </textarea> 
+<textarea cols="81" name="opinion" required="" rows="10"> </textarea> 
 <br><br> 
 Name: <input name="fullname" required="" size="75" type="text"/> 
 <br><br> 
@@ -35,14 +35,14 @@ Email: <input name="email" required="" size="75" type="email"/>
     var form = e.target; 
     var email = form["email"].value; 
     var fullname = form["fullname"].value; 
-    var destination = form["destination"].value; 
-    var details = form["details"].value; 
+    var tried = form["tried"].value; 
+    var opinion = form["opinion"].value; 
     var user = { 
       email: email, 
       name: fullname, 
-      destination: 
-      destination, 
-      details: details 
+      tried: 
+      tried, 
+      opinion: opinion
     }; 
     // Placeholder for an Identify call
     analytics.identify('1234', { 
@@ -50,7 +50,7 @@ Email: <input name="email" required="" size="75" type="email"/>
       name: fullname 
     }); 
     // Placeholder for a Track call
-    analytics.track('destination submitted', user, function() { 
+    analytics.track('opinion submitted', user, function() { 
       window.location.href = ""; 
     });
 
